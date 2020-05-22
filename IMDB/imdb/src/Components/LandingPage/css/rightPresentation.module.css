@@ -26,3 +26,11 @@
     width:80%;
     height:100%
 }
+.FlashcardGif{
+    grid-column: 3/5;
+    grid-row:6/8;
+    position: relative;
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
