@@ -1,0 +1,19 @@
+@font-face{
+    font-family: AMDB;
+    src: url('../../LandingPage/css/fonts/quicksand/static/Quicksand-Regular.ttf');
+}
+.SearchInput{
+    padding: 1em;
+    border: 0;
+    border-right: 3px solid rgba(35, 35, 35, 1);
+    width: 300px;
+    font-size: 1em;
+}
+.SearchButton{
+    background-color: steelblue;
+    border: 0;
+    padding: 1em;
+    font-family: AMDB;
+    font-size: 1em;
+    color: white;
+}

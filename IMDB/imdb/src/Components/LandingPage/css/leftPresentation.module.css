@@ -1,0 +1,41 @@
+.FlashCardContainer{
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: repeat(10,1fr);
+    height: 40vh;
+    margin-bottom: 5px;
+    background-color: black;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+}
+.FlashCardContainer *{
+    margin-left:5%;
+}
+.FlashCardHeader{
+    grid-column: 3/6;
+    grid-row: 4/6;
+}
+.FlashCardSecondHeader{
+    grid-column: 3/6;
+    grid-row: 6/8;
+}
+.FlashCardImg{
+    grid-column: 6/9;
+    grid-row: 1/10;
+    width:80%;
+    height:100%;
+}
+.FlashcardGif{
+    grid-column: 6/8;
+    grid-row: 1/5;
+    width: 92%;
+    height: 107%;
+    position: relative;
+    top: 55%;
+    left: 16.7%;
+    border-radius: 5px;
+    background-image: url('../../../ComponentImages/LandingPage/flashCards/ComputerTemplateImg/golden.gif');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
