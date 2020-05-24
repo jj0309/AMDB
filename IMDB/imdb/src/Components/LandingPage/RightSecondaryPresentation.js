@@ -2,9 +2,9 @@ import React from 'react';
 import style from './css/rightPresentation.module.css';
 
 const RightSecondary=(props)=>{
-    const gifURL = props.gif;
+    const gif = props.gif;
     const GifStyling = {
-        backgroundImage:'url("'+gifURL+'")'
+        backgroundImage:'url("'+gif+'")'
     }
     return(
         <div className={style.FlashCardContainer}>

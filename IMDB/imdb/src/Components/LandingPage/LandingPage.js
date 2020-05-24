@@ -8,14 +8,17 @@ import mobilePhoneImg from '../../ComponentImages/LandingPage/flashCards/mobileT
 import macbookImg from '../../ComponentImages/LandingPage/flashCards/ComputerTemplateImg/macbook.png';
 
 //gif imports
-const macGoldenRetriever = '../../ComponentImages/LandingPage/flashCards/ComputerTemplateImg/golden.gif'
-const mobileGoldenRetriever = '../../ComponentImages/LandingPage/flashCards/mobileTemplateImg/golden.gif';
+import macGoldenRetriever from '../../ComponentImages/LandingPage/flashCards/ComputerTemplateImg/golden.gif'
+import mobileGoldenRetriever from '../../ComponentImages/LandingPage/flashCards/mobileTemplateImg/golden.gif';
 
 
 const LandingPage=()=>{
     return(
         <div className='AppContainer'>
-            <MainPresentation/>
+            <MainPresentation
+                bgLs={[0]}
+                slideShow={true}
+            />
             <LeftFlashCard
                 header='Informations on thousands of movies and TV shows.'
                 secondaryHeader='Lookup all the informations you need for your favorite movies and TV shows.'

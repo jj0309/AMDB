@@ -1,8 +1,19 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import QuickSearch from '../SearchForm/BasicSearchForm';
 import style from './css/MainPresentation.module.css';
 
 const MainPresentation=(props)=>{
+
+    const bgList = useState(props.bgLs);
+
+    useEffect((bgIndex=0,bgList)=>{
+        setInterval(() => {
+            bgIndex++;
+            let currentBg = bgList[bgIndex];
+            let bgImgStyling={backgroundImage:currentBg};
+        }, 3000);
+    },[])
+
     return(
         <div className={style.GradientOffset}>
             <div className={style.PresentationContainer}>
