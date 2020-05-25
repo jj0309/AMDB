@@ -11,12 +11,15 @@ import macbookImg from '../../ComponentImages/LandingPage/flashCards/ComputerTem
 import macGoldenRetriever from '../../ComponentImages/LandingPage/flashCards/ComputerTemplateImg/golden.gif'
 import mobileGoldenRetriever from '../../ComponentImages/LandingPage/flashCards/mobileTemplateImg/golden.gif';
 
+//main presentation bg
+import img from  '../../ComponentImages/LandingPage/MainPresentation/wallpaper/20200525.jpg';
+
 
 const LandingPage=()=>{
     return(
         <div className='AppContainer'>
             <MainPresentation
-                bgLs={[0]}
+                bg={img}
                 slideShow={true}
             />
             <LeftFlashCard
