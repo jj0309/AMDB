@@ -1,0 +1,21 @@
+.QuickSearch{
+    grid-column: 1/11;
+    grid-row: 2/4;
+    background-color: #292c3e;
+    display: grid;
+    grid-template-rows: repeat(10,1fr);
+    grid-template-columns: repeat(10,1fr);
+}
+.formSearch{
+    grid-column: 4/8;
+    grid-row: 2/5;
+    display: flex;
+    flex-direction: column;
+}
+.formSearch *{
+    margin-bottom: 3px;
+}
+.SearchHeader{
+    color: white;
+    text-align: center;
+}

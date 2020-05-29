@@ -3,6 +3,9 @@ import MainPresentation from './MainPresentation';
 import LeftFlashCard from './LeftSecondaryPresentation';
 import RightFlashCard from './RightSecondaryPresentation';
 
+//to make http requests
+/* import axios from 'axios'; */
+
 //images imports
 import mobilePhoneImg from '../../ComponentImages/LandingPage/flashCards/mobileTemplateImg/phone.png';
 import macbookImg from '../../ComponentImages/LandingPage/flashCards/ComputerTemplateImg/macbook.png';
@@ -16,6 +19,13 @@ import img from  '../../ComponentImages/LandingPage/MainPresentation/wallpaper/2
 
 
 const LandingPage=()=>{
+
+    /* useEffect(()=>{
+        axios.get('/api').then((response)=>{
+            console.log(response.data);
+        });
+    },[]) */
+
     return(
         <div className='AppContainer'>
             <MainPresentation
