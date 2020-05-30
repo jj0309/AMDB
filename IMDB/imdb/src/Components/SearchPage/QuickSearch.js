@@ -13,7 +13,7 @@ const QuickSearch=(props)=>{
         setPayload({filmTitle:e.target.value});
     }
 
-    const handleSubmit=async(e)=>{
+    const handleSubmit=(e)=>{
         e.preventDefault();
         document.location = "/search/"+payload['filmTitle'];
     }
