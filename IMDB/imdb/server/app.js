@@ -24,6 +24,7 @@ app.get('/api',(req,res)=>{
 
 app.get('/api/search/:filmName',async(req,res)=>{
     const movieTitle = req.params.filmName;
+    console.log(movieTitle);
     const fetchURL = omdbApiReqUrl+movieTitle+apiKey;
     let returnedData={
         fetched:false
@@ -32,7 +33,6 @@ app.get('/api/search/:filmName',async(req,res)=>{
     .then(response=>response.json())
     .then(data=>{
         returnedData['datas']=data;
-        
     })
     .catch(error=>console.log('fetch error returned: ',error));
     res.send(returnedData);
