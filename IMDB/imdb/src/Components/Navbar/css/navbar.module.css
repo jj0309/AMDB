@@ -1,0 +1,18 @@
+.NavbarContainer{
+    background-color: black;
+    color: white;
+    width: 100%;
+}
+.NavbarContainer a{
+    color: white;
+    text-decoration: none;
+}
+.NavbarContainer ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 1em 0;
+    list-style: none;
+}
