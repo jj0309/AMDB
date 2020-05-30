@@ -15,11 +15,7 @@ const QuickSearch=(props)=>{
 
     const handleSubmit=async(e)=>{
         e.preventDefault();
-        const filmName = payload['filmTitle']
-        axios.get('/api/search/'+filmName)
-        .then((response)=>{
-            setSearchResponse(response.data);
-        })
+        document.location = "/search/"+payload['filmTitle'];
     }
 
     useEffect(()=>{
@@ -27,12 +23,12 @@ const QuickSearch=(props)=>{
         .then((response)=>{
             setSearchResponse(response.data);
         })
-    },[])
+    },[props.movieTitle])
 
     return(
         <div className={searchStyle.SearchContainer}>
             <div className={style.QuickSearch}>
-                <form className={style.formSearch} onSubmit={handleSubmit} action={"/search/"+payload['filmTitle']} method="post">
+                <form className={style.formSearch} onSubmit={handleSubmit}>
                     <h1 className={style.SearchHeader}>Lookup a movie</h1>
                     <input className={searchStyle.SearchInput} value={payload['filmTitle']} onChange={handleChange} style={{width:'100%',border:'0'}} placeholder="Name of a movie or TV show" type="text"></input>
                     <button className={searchStyle.SearchButton} style={{width:'100%'}} type="submit">Search now! (e.g. Titanic)</button>

@@ -29,7 +29,6 @@ app.get('/api/search/:filmName',async(req,res)=>{
         returnedData['fetched']=true;
     })
     .catch(error=>console.log('fetch error returned: ',error));
-    console.log(returnedData);
     res.send(returnedData);
 })
 
