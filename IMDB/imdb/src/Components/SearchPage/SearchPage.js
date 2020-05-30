@@ -1,13 +1,13 @@
 import React from 'react';
+import {useParams} from 'react-router-dom';
 import QuickSearch from './QuickSearch';
 
-import style from './css/SearchPage.module.css';
-
-const SearchPage=(props)=>{
+const SearchPage=()=>{
+    const params = useParams();
     return(
         <div>
-            <div className={style.SearchContainer}>
-                <QuickSearch/>
+            <div>
+                <QuickSearch movieTitle={params.movieTitle}/>
             </div>
         </div>
     );

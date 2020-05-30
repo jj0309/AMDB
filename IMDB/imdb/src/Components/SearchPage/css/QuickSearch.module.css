@@ -19,3 +19,30 @@
     color: white;
     text-align: center;
 }
+.SearchResult{
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: auto;
+    margin-top: 1em;
+}
+.FilmData{
+    text-align: left;
+    grid-row: auto;
+    grid-column: 1/8;
+    color: white;
+}
+.FilmData *{
+    margin-bottom: 0.5em;
+}
+.FilmData h1,.FilmData h2{
+    padding-left: 0;
+    text-decoration: underline;
+}
+.FilmPoster{
+    grid-row: auto;
+}
+.waitingForSearchSubmission{
+    text-align: center;
+    color: white;
+}
