@@ -44,3 +44,59 @@
     grid-column: 4/8;
     grid-row: 9/11;
 }
+
+@media only screen and (min-width: 320px){
+    .BackgroundSlider{
+        margin-bottom: 5px;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    .PresentationContainer{
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: grid;
+        grid-template-columns: repeat(10,1fr);
+        grid-row: repeat(10,1fr);
+        height: 65vh;
+        color: white;
+        font-family: AMDB;
+    }
+    .MainHeader{
+        font-size: 1em;
+        grid-column: 2/10;
+    }
+    .SearchHeader{
+        display: none;
+        grid-column: 2/10;
+    }
+    .SecondaryHeader{
+        font-size: 0.7em;
+        grid-column: 2/10;
+    }
+    .SearchModule input{
+        width: 99%;
+        font-size: 0.7em;
+    }
+    .SearchModule button{
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 375px){
+    .SearchHeader{
+        display: block;
+        font-size:0.9em;
+        text-align: left;
+    }
+}
+@media only screen and (min-width: 411px){
+    .SearchHeader{
+        font-size:1em;
+    }
+    .MainHeader{
+        font-size: 1.5em;
+    }
+    .SecondaryHeader{
+        font-size: 1em;
+    }
+}
