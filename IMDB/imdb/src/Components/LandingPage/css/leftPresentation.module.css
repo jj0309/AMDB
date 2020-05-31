@@ -38,3 +38,79 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
+
+@media only screen and (min-width: 320px){
+    .FlashCardHeader{
+        grid-column: 1/6;
+        font-size:0.8em;
+    }
+    .FlashCardSecondHeader{
+        font-size: 0.5em;
+        grid-column: 1/6;
+        grid-row: 7/11;
+    }
+    .FlashcardGif{
+        grid-column: 6/10;
+        left: 14.5%;
+        top: 54%;
+        height: 108%;
+    }
+    .FlashCardImg{
+        grid-column: 6/11;
+        width: 95%;
+    }
+}
+@media only screen and (min-width: 375px){
+    .FlashCardHeader{
+        grid-column: 1/6;
+        font-size:0.7em;
+    }
+    .FlashCardSecondHeader{
+        font-size: 0.5em;
+        grid-row: 6/11;
+    }
+}
+@media only screen and (min-width: 768px){
+    .FlashCardHeader{
+        font-size:1.5em;
+    }
+    .FlashCardSecondHeader{
+        font-size: 1em;
+    }
+}
+@media only screen and (min-width: 1024px){
+    .FlashCardHeader{
+        font-size:2em;
+    }
+    .FlashCardSecondHeader{
+        font-size: 1.5em;
+    }
+}
+@media only screen and (min-width: 1025px){
+    .FlashCardImg{
+        grid-column: 6/9;
+        grid-row: 1/10;
+        width:80%;
+        height:100%;
+    }
+    .FlashcardGif{
+        grid-column: 6/8;
+        grid-row: 1/5;
+        width: 92%;
+        height: 107%;
+        position: relative;
+        top: 55%;
+        left: 16.7%;
+        border-radius: 5px;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+}
+@media only screen and (min-width: 3048px){
+    .FlashCardHeader{
+        font-size:4em;
+    }
+    .FlashCardSecondHeader{
+        font-size: 3em;
+    }
+}

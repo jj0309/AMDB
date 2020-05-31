@@ -2,7 +2,6 @@
     font-family: AMDB;
     src: url('./fonts/quicksand/static/Quicksand-Medium.ttf');
 }
-
 .GradientOffset{
     background-color: black;
 }
@@ -20,6 +19,7 @@
     grid-template-columns: repeat(10,1fr);
     grid-row: repeat(10,1fr);
     height: 65vh;
+    width: 100%;
     color: white;
     font-family: AMDB;
 }
@@ -46,22 +46,6 @@
 }
 
 @media only screen and (min-width: 320px){
-    .BackgroundSlider{
-        margin-bottom: 5px;
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-    }
-    .PresentationContainer{
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: grid;
-        grid-template-columns: repeat(10,1fr);
-        grid-row: repeat(10,1fr);
-        height: 65vh;
-        color: white;
-        font-family: AMDB;
-    }
     .MainHeader{
         font-size: 1em;
         grid-column: 2/10;
@@ -98,5 +82,41 @@
     }
     .SecondaryHeader{
         font-size: 1em;
+    }
+}
+@media only screen and (min-width: 1024px){
+    .SearchHeader{
+        font-size:1.5em;
+    }
+    .MainHeader{
+        font-size: 2em;
+    }
+    .SecondaryHeader{
+        font-size: 1.5em;
+    }
+    .SearchModule input{
+        width: 99%;
+        font-size: 1em;
+    }
+    .SearchModule button{
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 3048px){
+    .SearchHeader{
+        font-size:3em;
+    }
+    .MainHeader{
+        font-size: 4em;
+    }
+    .SecondaryHeader{
+        font-size: 3em;
+    }
+    .SearchModule input{
+        width: 99%;
+        font-size: 2em;
+    }
+    .SearchModule button{
+        padding: 2em;
     }
 }

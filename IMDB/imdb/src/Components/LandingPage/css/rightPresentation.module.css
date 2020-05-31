@@ -38,3 +38,75 @@
     background-repeat: no-repeat;
     border-radius: 8px;
 }
+
+@media only screen and (min-width: 320px){
+    .FlashCardHeader{
+        font-size:0.8em;
+    }
+    .FlashCardSecondHeader{
+        font-size: 0.5em;
+    }
+    .FlashCardImg{
+        width: 115%;
+        height: 90%;
+    }
+    .FlashcardGif{
+        width: 70%;
+        height: 90%;
+        top:5.5%;
+        left: 23%;
+        border-radius: 3px;
+    }
+}
+@media only screen and (min-width: 375px){
+    .FlashCardHeader{
+        font-size:0.7em;
+    }
+    .FlashCardSecondHeader{
+        font-size: 0.5em;
+    }
+}
+@media only screen and (min-width: 768px){
+    .FlashCardHeader{
+        font-size:1.5em;
+    }
+    .FlashCardSecondHeader{
+        font-size: 1em;
+    }
+}
+@media only screen and (min-width: 1024px){
+    .FlashCardHeader{
+        font-size:2em;
+    }
+    .FlashCardSecondHeader{
+        font-size: 1.5em;
+    }
+}
+@media only screen and (min-width: 1025px){
+    .FlashCardImg{
+        grid-column: 3/5;
+        grid-row: 2/10;
+        width:80%;
+        height:100%
+    }
+    .FlashcardGif{
+        grid-column: 3/5;
+        grid-row:2/9;
+        width: 50.5%;
+        height: 100%;
+        position: relative;
+        top:6.5%;
+        left: 15%;
+        background-size:100% 100%;
+        background-repeat: no-repeat;
+        border-radius: 8px;
+    }
+}
+@media only screen and (min-width: 3048px){
+    .FlashCardHeader{
+        font-size:4em;
+    }
+    .FlashCardSecondHeader{
+        font-size: 3em;
+    }
+}
