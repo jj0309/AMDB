@@ -9,6 +9,7 @@ import RightFlashCard from './RightSecondaryPresentation';
 //images imports
 import mobilePhoneImg from '../../ComponentImages/LandingPage/flashCards/mobileTemplateImg/phone.png';
 import macbookImg from '../../ComponentImages/LandingPage/flashCards/ComputerTemplateImg/macbook.png';
+import reactLogo from '../../ComponentImages/LandingPage/flashCards/ReactLogoImg/React.png';
 
 //gif imports
 import macGoldenRetriever from '../../ComponentImages/LandingPage/flashCards/ComputerTemplateImg/golden.gif'
@@ -19,12 +20,6 @@ import img from  '../../ComponentImages/LandingPage/MainPresentation/wallpaper/2
 
 
 const LandingPage=()=>{
-
-    /* useEffect(()=>{
-        axios.get('/api').then((response)=>{
-            console.log(response.data);
-        });
-    },[]) */
 
     return(
         <div className='AppContainer'>
@@ -45,6 +40,12 @@ const LandingPage=()=>{
                img = {mobilePhoneImg}
                haveGif ={true}
                gif={mobileGoldenRetriever}
+            />
+            <LeftFlashCard
+                header='Why use this over IMDB?'
+                secondaryHeader="No reason to, this is a personal project for me to learn React."
+                haveGif={false}
+                img = {reactLogo}
             />
         </div>
     );

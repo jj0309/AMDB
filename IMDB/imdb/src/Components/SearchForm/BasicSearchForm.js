@@ -3,7 +3,7 @@ import style from './css/BasicSearchForm.module.css';
 
 const QuickSearch=(props)=>{
 
-    const [payload,setPayload] = useState('the wolf of wallstreet');
+    const [payload,setPayload] = useState('the wolf of wall street');
 
     //change payload value when user types into the input
     const handleInputChange=(e)=>{
