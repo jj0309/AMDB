@@ -35,16 +35,24 @@ const DiscoverCategory=(props)=>{
                         {
                             genreCollection.map((movie,index)=>{
                                 return(
-                                <div className={style.Movie} key={index}>
-                                    <h3>{movie.title}</h3>
-                                    <img alt='poster' src={'https://image.tmdb.org/t/p/w500/'+movie.poster_path}/>
-                                    <h4>{movie.vote_average === 0 ?
-                                        'not yet rated'
-                                        :
-                                        movie.vote_average
-                                        }☆
-                                    </h4>
-                                </div>
+                                    <a href={'/search/'+movie.title}>
+                                        <div className={style.Movie} key={index}>
+                                            <h3>
+                                                {movie.title.length>32?
+                                                movie.title.substring(0,29)+'...'
+                                                :
+                                                movie.title
+                                                }
+                                            </h3>
+                                            <img alt='poster' src={'https://image.tmdb.org/t/p/w500/'+movie.poster_path}/>
+                                            <h4>{movie.vote_average === 0 ?
+                                                'not yet rated'
+                                                :
+                                                movie.vote_average
+                                                }☆
+                                            </h4>
+                                        </div>
+                                    </a>
                                 )
                             })
                         }

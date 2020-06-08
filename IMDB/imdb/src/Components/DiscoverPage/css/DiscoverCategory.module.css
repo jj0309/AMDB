@@ -26,6 +26,9 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
+.ShowedGenre a{
+    text-decoration: none;
+}
 .Movie{
     margin:1em 0;
     text-align: center;
