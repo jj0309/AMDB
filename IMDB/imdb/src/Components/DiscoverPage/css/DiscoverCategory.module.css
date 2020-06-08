@@ -1,0 +1,14 @@
+.CategoryListing{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 50%;
+    margin: auto;
+    color: white;
+}
+.CategoryListing li{
+    list-style: none;
+    font-size: 1.5em;
+    text-align: center;
+}
