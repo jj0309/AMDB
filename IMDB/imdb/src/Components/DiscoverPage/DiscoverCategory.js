@@ -30,13 +30,14 @@ const DiscoverCategory=(props)=>{
                 }
             </ul>
             { props.showSection?
-                <div className={style.ShowedGenre}>
-                    {
-                        genreCollection.map((movie,index)=>{
-                            return(
+                <div className={style.BackgroundOffset}>
+                    <div className={style.ShowedGenre}>
+                        {
+                            genreCollection.map((movie,index)=>{
+                                return(
                                 <div className={style.Movie} key={index}>
                                     <h3>{movie.title}</h3>
-                                    <img src={'https://image.tmdb.org/t/p/w500/'+movie.poster_path}/>
+                                    <img alt='poster' src={'https://image.tmdb.org/t/p/w500/'+movie.poster_path}/>
                                     <h4>{movie.vote_average === 0 ?
                                         'not yet rated'
                                         :
@@ -44,9 +45,10 @@ const DiscoverCategory=(props)=>{
                                         }☆
                                     </h4>
                                 </div>
-                            )
-                        })
-                    }
+                                )
+                            })
+                        }
+                    </div>
                 </div>
                 :
                 <div className={style.NoGenreSeclected}>

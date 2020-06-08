@@ -1,3 +1,6 @@
+.BackgroundOffset{
+    background-color: whitesmoke;
+}
 .CategoryListing{
     display: flex;
     flex-direction: row;
