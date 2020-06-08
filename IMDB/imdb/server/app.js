@@ -32,6 +32,13 @@ app.get('/api/discover',async(req,res)=>{
     res.send(returnedData);
 })
 
+app.get('/api/discover/:genreID',async(req,res)=>{
+    const genreID = req.params.genreID;
+    const fetchURL = 'https://api.themoviedb.org/3/discover/movie?api_key='+TmdbApiKey+'&language=en-US&with_genres='+genreID;
+    const returnedData = await getApi.fetchAPI(fetchURL);
+    res.send(returnedData);
+})
+
 app.get('/*',(req,res)=>{
     res.send({invalidReq:true});
 })

@@ -1,14 +1,36 @@
 .CategoryListing{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 50%;
-    margin: auto;
+    margin-top: 1em;
+    padding-bottom: 1em;
+    border-bottom: 2px solid black;
+    color: white;
+}
+.CategoryListing a{
+    text-decoration: none;
     color: white;
 }
 .CategoryListing li{
     list-style: none;
-    font-size: 1.5em;
+    font-size: 1em;
     text-align: center;
+}
+.ShowedGenre{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.Movie{
+    margin:1em 0;
+    text-align: center;
+    color: white;
+    border: 1px solid black;
+    background: black;
+}
+.Movie img{
+    width: 20em;
+    height: 30em;
 }

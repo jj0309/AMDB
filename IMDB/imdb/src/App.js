@@ -15,7 +15,8 @@ function App() {
         <Route path='/' exact component={LandingPage}/>
         <Route path='/search' exact component={SearchPage}/>
         <Route path='/search/:movieTitle' component={SearchPage}/>
-        <Route path='/discover'exact component={DiscoverPage}/>
+        <Route path='/discover'exact component={()=><DiscoverPage genre={false}/>}/>
+        <Route path='/discover/:genre'exact component={()=><DiscoverPage genre={true}/>}/>
         <Route path='/about' component={AboutPage}/>
       </Switch>
     </Router>
