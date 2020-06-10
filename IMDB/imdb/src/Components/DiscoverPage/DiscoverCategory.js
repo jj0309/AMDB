@@ -7,6 +7,7 @@ const DiscoverCategory=(props)=>{
 
     const [genres,setGenres]=useState([]);
     const [genreID]=useState(props.genreID);
+    const [page]=useState(props.page);
     const [genreCollection,setGenreCollection]=useState([]);
 
     useEffect(()=>{
@@ -17,10 +18,10 @@ const DiscoverCategory=(props)=>{
 
     useEffect(()=>{
         if(props.showSection)
-            axios.get('/api/discover/'+genreID).then(response=>{
+            axios.get('/api/discover/'+genreID+'/'+page).then(response=>{
                 setGenreCollection(response.data.datas.results);
             })
-    },[props.showSection,genreID])
+    },[props.showSection,genreID,page])
 
     return(
         <div>
@@ -35,8 +36,15 @@ const DiscoverCategory=(props)=>{
                         {
                             genreCollection.map((movie,index)=>{
                                 return(
-                                    <a href={'/search/'+movie.title}>
-                                        <div className={style.Movie} key={index}>
+                                    <a href={'/search/'+movie.title}key={index}>
+                                        <div className={style.Movie}>
+                                            <h4 className={style.MovieRating}>
+                                                {movie.vote_average === 0 ?
+                                                'not yet rated'
+                                                :
+                                                movie.vote_average
+                                                }<span className={style.Star}>☆</span>
+                                            </h4>
                                             <h3>
                                                 {movie.title.length>32?
                                                 movie.title.substring(0,29)+'...'
@@ -45,12 +53,6 @@ const DiscoverCategory=(props)=>{
                                                 }
                                             </h3>
                                             <img alt='poster' src={'https://image.tmdb.org/t/p/w500/'+movie.poster_path}/>
-                                            <h4>{movie.vote_average === 0 ?
-                                                'not yet rated'
-                                                :
-                                                movie.vote_average
-                                                }☆
-                                            </h4>
                                         </div>
                                     </a>
                                 )

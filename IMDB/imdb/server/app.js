@@ -32,9 +32,10 @@ app.get('/api/discover',async(req,res)=>{
     res.send(returnedData);
 })
 
-app.get('/api/discover/:genreID',async(req,res)=>{
+app.get('/api/discover/:genreID/:page',async(req,res)=>{
     const genreID = req.params.genreID;
-    const fetchURL = 'https://api.themoviedb.org/3/discover/movie?api_key='+TmdbApiKey+'&language=en-US&with_genres='+genreID;
+    const page = req.params.page;
+    const fetchURL = 'https://api.themoviedb.org/3/discover/movie?api_key='+TmdbApiKey+'&language=en-US&with_genres='+genreID+'&page='+page;
     const returnedData = await getApi.fetchAPI(fetchURL);
     res.send(returnedData);
 })

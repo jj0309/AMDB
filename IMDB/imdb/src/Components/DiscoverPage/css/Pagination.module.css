@@ -1,0 +1,18 @@
+.PaginationModule{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #1c1a32;
+}
+.PaginationModule a{
+    text-decoration: none;
+    color: white;
+    font-size: 2em;
+}
+.PaginationModule a:first-of-type{
+    margin-right: 1em;
+}
+.PaginationModule h1{
+    color: white;
+    margin-right: 1em;
+}
