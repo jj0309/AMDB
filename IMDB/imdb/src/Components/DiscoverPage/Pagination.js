@@ -6,9 +6,17 @@ const Pagination=(props)=>{
     const [categoryGenre]=useState(props.genre);
     return(
         <div className={style.PaginationModule}>
-            <a href={'/discover/'+categoryGenre+'/'+(parseInt(pageIndex)-1)}>Previous page</a>
+            { pageIndex > 1 ?
+                <a href={'/discover/'+categoryGenre+'/'+(parseInt(pageIndex)-1)}>Previous page</a>
+                :
+                <div></div>
+            }
             <h1>page {pageIndex}</h1>
-            <a href={'/discover/'+categoryGenre+'/'+(parseInt(pageIndex)+1)}>Next page</a>
+            { pageIndex<=349?
+                <a href={'/discover/'+categoryGenre+'/'+(parseInt(pageIndex)+1)}>Next page</a>
+                :
+                <div></div>
+            }
         </div>
     )
 }
