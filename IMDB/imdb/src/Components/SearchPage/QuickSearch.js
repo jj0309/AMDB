@@ -6,7 +6,7 @@ import axios from 'axios';
 const QuickSearch=(props)=>{
     const [searchResponse,setSearchResponse] = useState({fetched:false});
     const [payload,setPayload]=useState({
-        filmTitle:props.movieTitle,
+        filmTitle:''
     })
 
     const handleChange=(e)=>{
@@ -15,15 +15,18 @@ const QuickSearch=(props)=>{
 
     const handleSubmit=(e)=>{
         e.preventDefault();
-        document.location = "/search/"+payload['filmTitle'];
+        axios.get('/api/searchByName/'+payload['filmTitle'])
+        .then((response)=>{
+            document.location = "/search/"+response['data']['datas']['imdbID'];
+        })
     }
 
     useEffect(()=>{
-        axios.get('/api/search/'+props.movieTitle)
+        axios.get('/api/search/'+props.movieID)
         .then((response)=>{
             setSearchResponse(response.data);
         })
-    },[props.movieTitle])
+    },[props.movieID])
 
     return(
         <div className={searchStyle.SearchContainer}>

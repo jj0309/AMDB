@@ -14,7 +14,7 @@ const RightSecondary=(props)=>{
             {props.haveGif ? 
                 <div className={style.FlashcardGif} style={GifStyling}></div>
                 :
-                <div></div>
+                null
             }
         </div>
     );

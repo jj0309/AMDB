@@ -4,10 +4,8 @@ const app = express();
 
 const port = 80;
 
-const omdbApiReqUrl = 'http://www.omdbapi.com/?t=';
-const apiKey = '&plot=full&apikey=9442c777';
-
 const TmdbApiKey = '89f8b08c2cfc4c749262f44b826e2f22';
+const omdbKey = '9442c777';
 
 app.get('/',(req,res)=>{
     res.send({});
@@ -19,9 +17,18 @@ app.get('/api',(req,res)=>{
     res.send(newObj);
 })
 
-app.get('/api/search/:filmName',async(req,res)=>{
-    const movieTitle = req.params.filmName;
-    const fetchURL = omdbApiReqUrl+movieTitle+apiKey;
+app.get('/api/searchByName/:name',async(req,res)=>{
+    const movieName = req.params.name;
+    const fetchURL = 'http://www.omdbapi.com/?apikey='+omdbKey+'&t='+movieName;
+    const returnedData = await getApi.fetchAPI(fetchURL);
+    res.send(returnedData);
+})
+
+app.get('/api/search/:filmID',async(req,res)=>{
+    const movieID = req.params.filmID;
+    let fetchURL = 'https://api.themoviedb.org/3/movie/'+movieID+'?api_key='+TmdbApiKey+'&language=en-US'
+    const imdbID = await getApi.fetchAPI(fetchURL);
+    fetchURL = 'http://www.omdbapi.com/?apikey='+omdbKey+'&i='+imdbID['datas']['imdb_id'];
     const returnedData = await getApi.fetchAPI(fetchURL);
     res.send(returnedData);
 })

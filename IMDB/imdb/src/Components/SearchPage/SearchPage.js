@@ -7,7 +7,7 @@ const SearchPage=()=>{
     return(
         <div>
             <div>
-                <QuickSearch movieTitle={params.movieTitle}/>
+                <QuickSearch movieID={params.movieID}/>
             </div>
         </div>
     );
