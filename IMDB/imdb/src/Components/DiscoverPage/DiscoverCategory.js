@@ -36,7 +36,7 @@ const DiscoverCategory=(props)=>{
                         {
                             genreCollection.map((movie,index)=>{
                                 return(
-                                    <a href={'/search/'+movie.title}key={index}>
+                                    <a href={'/search/'+movie.id}key={index}>
                                         <div className={style.Movie}>
                                             <h4 className={style.MovieRating}>
                                                 {movie.vote_average === 0 ?
