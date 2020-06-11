@@ -22,6 +22,7 @@ const AboutPage=()=>{
                         <h3>ReactJS</h3>
                         <h3>Express (backend to make calls to the OMDB api)</h3>
                         <h3>OMDB (API)</h3>
+                        <h3>TMDB (API)</h3>
                         <h3>CSS</h3>
                         <h3>React-Spring (Soon,I do plan on adding minimalistic animations to it in the near future)</h3>
                     </div>
