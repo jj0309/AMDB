@@ -40,8 +40,8 @@ const DiscoverCategory=(props)=>{
                             {
                                 genreCollection.map((movie,index)=>{
                                     return(
-                                        <a href={'/search/'+movie.title}key={index}>
-                                            <div className={style.Movie}>
+                                        <div className={style.Movie} key={index}>
+                                             <a href={'/search/'+movie.id}>
                                                 <h4 className={style.MovieRating}>
                                                     {movie.vote_average === 0 ?
                                                     'not yet rated'
@@ -57,8 +57,8 @@ const DiscoverCategory=(props)=>{
                                                     }
                                                 </h3>
                                                 <img alt='poster' src={'https://image.tmdb.org/t/p/w500/'+movie.poster_path}/>
-                                            </div>
-                                        </a>
+                                            </a>
+                                        </div>
                                     )
                                 })
                             }

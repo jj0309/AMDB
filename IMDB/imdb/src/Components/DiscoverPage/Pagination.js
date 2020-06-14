@@ -11,7 +11,7 @@ const Pagination=(props)=>{
                 :
                 <div></div>
             }
-            <h1>page {pageIndex}</h1>
+            <h2>page {pageIndex}</h2>
             { pageIndex<=349?
                 <a href={'/discover/'+categoryGenre+'/'+(parseInt(pageIndex)+1)}>Next page</a>
                 :

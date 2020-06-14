@@ -23,13 +23,15 @@
     background-color: black;
     display: grid;
     grid-template-columns: repeat(10,1fr);
-    grid-template-rows: auto;
+    grid-template-rows: repeat(10,1fr);
+    height: fit-content;
+    padding-bottom: 3em;
     margin-top: 1em;
 }
 .FilmData{
     text-align: left;
-    grid-row: auto;
-    grid-column: 1/8;
+    grid-column: 2/5;
+    grid-row: 1/11;
     color: white;
 }
 .FilmData *{
@@ -40,9 +42,61 @@
     text-decoration: underline;
 }
 .FilmPoster{
-    grid-row: auto;
+    grid-column: 7/9;
+    grid-row: 1/11;
+    width: 100%;
+    height: 100%;
 }
 .waitingForSearchSubmission{
     text-align: center;
     color: white;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 1025px){
+    .QuickSearch{
+        height: 40vh;
+    }
+    .formSearch{
+        grid-column: 2/10;
+    }
+    .SearchResult{
+        grid-template-rows: repeat(10,1fr);
+        grid-template-columns: repeat(10,1fr);
+        height: fit-content;
+    }
+    .FilmData{
+        grid-row: 4/11;
+        grid-column: 1/11;
+    }
+    .FilmData *{
+        border-bottom: 1px solid silver;
+    }
+    .FilmData h4:last-of-type{
+        border:0;
+    }
+    .FilmPoster{
+        grid-row: 1/4;
+        grid-column: 4/8;
+    }
+}
+@media only screen and (min-width: 768px ) and (max-width: 1025px){
+    .FilmData{
+        grid-row: 5/11;
+        grid-column: 1/11;
+    }
+    .FilmPoster{
+        grid-row: 1/5;
+        grid-column: 4/8;
+        height: 100%;
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 1921px){
+    .FilmData{
+        font-size: 3em;
+    }
+    .FilmPoster{
+        grid-row: 1/11;
+        grid-column: 6/9;
+    }
 }

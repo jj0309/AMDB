@@ -17,7 +17,8 @@ const QuickSearch=(props)=>{
         e.preventDefault();
         axios.get('/api/searchByName/'+payload['filmTitle'])
         .then((response)=>{
-            document.location = "/search/"+response['data']['datas']['imdbID'];
+            if(response['data']['datas'] !== undefined)
+                document.location = "/search/"+response['data']['datas']['imdbID'];
         })
     }
 

@@ -6,7 +6,7 @@ const AboutPage=()=>{
         <div>
             <div className={style.AboutContainer}>
                 <div className={style.AboutText}>
-                    <p>This is a very simple project made using the OMDB api. The project itself 
+                    <p>This is a very simple project made using the OMDB and TMDB api. The project itself 
                         was started as a mean for me to get familiarized to ReactJS which is why 
                         not much backend work was done as it wouldn't have chipped into my learning 
                         of the framework itself. With that said, I do plan on adding more features to it eventually

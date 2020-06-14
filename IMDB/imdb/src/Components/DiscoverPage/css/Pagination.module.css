@@ -12,7 +12,8 @@
 .PaginationModule a:first-of-type{
     margin-right: 1em;
 }
-.PaginationModule h1{
+.PaginationModule h2{
     color: white;
     margin-right: 1em;
+    font-size: 1.7em;
 }
