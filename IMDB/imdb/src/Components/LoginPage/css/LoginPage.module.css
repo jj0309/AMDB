@@ -1,0 +1,10 @@
+.LoginPageContainer{
+    display: grid;
+    grid-template-columns: repeat(20,1fr);
+    grid-template-rows: repeat(20,1fr);
+    height: 95vh;
+    width: 100%;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 1) 100%),url('../../../ComponentImages/LandingPage/MainPresentation/wallpaper/20200525.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}

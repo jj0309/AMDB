@@ -2,6 +2,7 @@ const express = require('express');
 const getApi = require('./Utils/fetch');
 const app = express();
 
+
 const port = 80;
 
 const TmdbApiKey = '89f8b08c2cfc4c749262f44b826e2f22';
@@ -10,12 +11,10 @@ const omdbKey = '9442c777';
 app.get('/',(req,res)=>{
     res.send({});
 })
-app.get('/api',(req,res)=>{
-    let newObj = {
-        main:'main endpoint obj value'
-    };
-    res.send(newObj);
+app.get('/api/login/guest',(req,res)=>{
+
 })
+
 
 app.get('/api/searchByName/:name',async(req,res)=>{
     const movieName = req.params.name;

@@ -1,0 +1,23 @@
+.LoginModuleContainer{
+    grid-row: 4/8;
+    grid-column: 9/13;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    padding: 0.5em 6em;
+    background-color: rgba(35, 35, 35, 0.9);
+}
+.LoginModuleContainer *{
+    margin-bottom: 0.2em;
+}
+.LoginModuleContainer h2,.LoginModuleContainer p{
+    color: white;
+}
+.LoginModuleContainer button{
+    margin: auto;
+    padding: 0.25em 0.50em;
+    background-color: #4682b4;
+    border-radius: 5px;
+}

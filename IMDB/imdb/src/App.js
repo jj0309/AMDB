@@ -5,6 +5,7 @@ import SearchPage from './Components/SearchPage/SearchPage'
 import DiscoverPage from './Components/DiscoverPage/DiscoverPage';
 import AboutPage from './Components/AboutPage/AboutPage'
 import Navbar from './Components/Navbar/Navbar';
+import LoginPage from './Components/LoginPage/LoginPage';
 import './App.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/discover' exact component={()=><DiscoverPage genre={false}/>}/>
         <Route path='/discover/:genre' exact component={()=><DiscoverPage genre={true}/>}/>
         <Route path='/discover/:genre/:page' component={()=><DiscoverPage genre={true}/>}/>
+        <Route path ='/Login' component={LoginPage}/>
         <Route path='/about' component={AboutPage}/>
       </Switch>
     </Router>

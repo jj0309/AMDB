@@ -1,0 +1,36 @@
+.UserLoginContainer{
+    grid-row: 12/16;
+    grid-column: 8/14;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    background-color: rgba(35, 35, 35, 0.9);
+}
+
+.FormContainer{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.FormContainer h2,.FormContainer p{
+    color: white;
+}
+.FormContainer *{
+    margin: auto;
+    margin-bottom: 1em;
+}
+.FormContainer input{
+    width: fit-content;
+    text-align: center;
+}
+.FormContainer input:first-of-type{
+    margin-bottom: 0;
+}
+.FormContainer button{
+    width: fit-content;
+    padding: 0.25em 0.50em;
+    background-color: #4682b4;
+    border-radius: 5px;
+}
+.FormContainer p{
+    color: red;
+}
