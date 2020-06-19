@@ -1,18 +1,22 @@
 const express = require('express');
 const getApi = require('./Utils/fetch');
+const jwt = require('jwt-simple');
 const app = express();
 
+const JWT_SECRET = 'RziB2$0309$13';
 
 const port = 80;
 
 const TmdbApiKey = '89f8b08c2cfc4c749262f44b826e2f22';
 const omdbKey = '9442c777';
 
-app.get('/',(req,res)=>{
-    res.send({});
-})
 app.get('/api/login/guest',(req,res)=>{
-
+    const guestUserPayload={
+        username:'guest',
+        permission:'guest'
+    }
+    const token = jwt.encode(guestUserPayload,JWT_SECRET);
+    res.send({token:token});
 })
 
 
