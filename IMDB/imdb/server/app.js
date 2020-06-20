@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const app = express();
 
 const JWT_SECRET = 'RziB2$0309$13';
+const JWT_REFRESH_SECRET = 'TT0903$514$jj';
 
 const port = 80;
 
@@ -17,9 +18,19 @@ app.get('/api/login/guest',(req,res)=>{
         username:'guest',
         permission:'guest'
     }
-    const token = jwt.sign(guestUserPayload,JWT_SECRET,{expiresIn:300});
+    const token = createToken(guestUserPayload,1800);
+    //const refreshToken = createRefreshToken(guestUserPayload);
     res.send({token:token});
 })
+const createToken=(user,tokenTime)=>{
+    const token = jwt.sign(user,JWT_SECRET,{expiresIn:tokenTime});
+    return token;
+}
+/* const createRefreshToken=(user)=>{
+    const refreshToken = jwt.sign(user,JWT_REFRESH_SECRET);
+    return refreshToken;
+} */
+
 app.post('/api/verifyToken',(req,res)=>{
     const token = req.body.token;
     const returnPayload = {tokenValidation:false}

@@ -1,12 +1,19 @@
 import React from 'react';
 import style from './css/GuestModule.module.css'
 import axios from 'axios';
+import {useHistory} from 'react-router';
+
+const jsCookie = require('js-cookie');
 
 const GuestModule=()=>{
 
+    const history=useHistory();
     const guestLogHandler=()=>{
         axios.get('/api/login/guest').then((response)=>{
-            console.log(response);
+            jsCookie.set('sessionToken',response.data.token);
+            history.push({
+                pathname:'/about'
+            });
         })
     }
 
