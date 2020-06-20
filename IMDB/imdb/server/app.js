@@ -1,6 +1,6 @@
 const express = require('express');
 const getApi = require('./Utils/fetch');
-const jwt = require('jwt-simple');
+const jwt = require('jsonwebtoken');
 const app = express();
 
 const JWT_SECRET = 'RziB2$0309$13';
@@ -10,15 +10,28 @@ const port = 80;
 const TmdbApiKey = '89f8b08c2cfc4c749262f44b826e2f22';
 const omdbKey = '9442c777';
 
+app.use(express.json());
+
 app.get('/api/login/guest',(req,res)=>{
     const guestUserPayload={
         username:'guest',
         permission:'guest'
     }
-    const token = jwt.encode(guestUserPayload,JWT_SECRET);
+    const token = jwt.sign(guestUserPayload,JWT_SECRET,{expiresIn:300});
     res.send({token:token});
 })
-
+app.post('/api/verifyToken',(req,res)=>{
+    const token = req.body.token;
+    const returnPayload = {tokenValidation:false}
+    try{
+        const decoded = jwt.verify(token,JWT_SECRET);
+        returnPayload['decodedToken'] = decoded;
+    }catch(error){
+        return res.send({returnPayload});
+    }
+    returnPayload['tokenValidation'] = true;
+    return res.send(returnPayload);
+})
 
 app.get('/api/searchByName/:name',async(req,res)=>{
     const movieName = req.params.name;
