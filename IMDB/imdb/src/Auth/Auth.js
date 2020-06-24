@@ -9,8 +9,8 @@ class Auth{
         this.autenticated = await tokenAuth.validateSession();
     }
 
-    isAuthenticated(){
-        this.verifyAuth();
+    async isAuthenticated(){
+        await this.verifyAuth();
         return this.autenticated;
     }
 }
