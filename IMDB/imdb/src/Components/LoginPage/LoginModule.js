@@ -7,7 +7,7 @@ const LoginModule=()=>{
             <form className={style.FormContainer}>
                 <h2>Log in as a user</h2>
                 <input placeholder='Username'></input>
-                <input placeholder='Password' type='password'></input>
+                <input placeholder='Password' type='password' autoComplete='on'></input>
                 <button>Login</button>
                 <p>This feature is currently disabled</p>
             </form>

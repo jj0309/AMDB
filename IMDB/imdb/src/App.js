@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from'react-router-dom';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute'
 import LandingPage from './Components/LandingPage/LandingPage'
 import SearchPage from './Components/SearchPage/SearchPage'
 import DiscoverPage from './Components/DiscoverPage/DiscoverPage';
@@ -20,7 +21,7 @@ function App() {
         <Route path='/discover/:genre' exact component={()=><DiscoverPage genre={true}/>}/>
         <Route path='/discover/:genre/:page' component={()=><DiscoverPage genre={true}/>}/>
         <Route path ='/Login' component={LoginPage}/>
-        <Route path='/about' component={AboutPage}/>
+        <PrivateRoute exact path='/about' component={AboutPage}/>
       </Switch>
     </Router>
   );

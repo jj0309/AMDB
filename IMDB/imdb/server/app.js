@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const app = express();
 
 const JWT_SECRET = 'RziB2$0309$13';
-const JWT_REFRESH_SECRET = 'TT0903$514$jj';
+/* const JWT_REFRESH_SECRET = 'TT0903$514$jj'; */
 
 const port = 80;
 
@@ -38,7 +38,7 @@ app.post('/api/verifyToken',(req,res)=>{
         const decoded = jwt.verify(token,JWT_SECRET);
         returnPayload['decodedToken'] = decoded;
     }catch(error){
-        return res.send({returnPayload});
+        return res.send(returnPayload);
     }
     returnPayload['tokenValidation'] = true;
     return res.send(returnPayload);

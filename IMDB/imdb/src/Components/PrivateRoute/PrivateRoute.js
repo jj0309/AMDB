@@ -1,20 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import {Route} from 'react-router-dom';
+import {Redirect} from 'react-router';
+import Auth from '../../Auth/Auth';
 
-const Redirect=({component:Component})=>{
-    const [auth,SetAuth]=useState(false);
-    useEffect(()=>{
-        axios.post('/api/verifyToken',
-            {
-                token:tokenvalue
-            }
-        ).then(response=>{
-            SetAuth(response.data.tokenValidation);
-        }).catch(error=>{
-            console.log('api data fetch error: ',error);
-        })
-    },[auth])
+const PrivateRoute=({component:Component, ...rest})=>{
+
     return(
-        <Redirect to={{pathname:'/login'}}/>
+        <Route {...rest} render={
+            (props)=>{
+                if(Auth.isAuthenticated())
+                    return <Component {...props}/>
+                else{
+                    return <Redirect
+                        to={{
+                            pathname:'/login',
+                            state:{
+                                from: props.location
+                            }
+                        }}
+                    />
+                }  
+            }
+        }/>
     )
 }
+
+export default PrivateRoute;

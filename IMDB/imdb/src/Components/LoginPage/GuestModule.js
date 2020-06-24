@@ -12,7 +12,7 @@ const GuestModule=()=>{
         axios.get('/api/login/guest').then((response)=>{
             jsCookie.set('sessionToken',response.data.token);
             history.push({
-                pathname:'/about'
+                pathname:'/'
             });
         })
     }
