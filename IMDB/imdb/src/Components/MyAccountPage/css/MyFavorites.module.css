@@ -1,0 +1,11 @@
+.MyFavorites{
+    grid-row: 14/19;
+    grid-column: 1/21;
+    display: flex;
+    flex-direction: row;
+}
+.MyFavoritesCard{
+    list-style: none;
+    color: white;
+    text-decoration: none;
+}

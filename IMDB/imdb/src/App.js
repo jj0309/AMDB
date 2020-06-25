@@ -7,6 +7,7 @@ import DiscoverPage from './Components/DiscoverPage/DiscoverPage';
 import AboutPage from './Components/AboutPage/AboutPage'
 import Navbar from './Components/Navbar/Navbar';
 import LoginPage from './Components/LoginPage/LoginPage';
+import MyAccountPage from './Components/MyAccountPage/MyAccountPage';
 import './App.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path='/discover/:genre/:page' component={()=><DiscoverPage genre={true}/>}/>
         <Route path ='/Login' component={LoginPage}/>
         <PrivateRoute exact path='/about' component={AboutPage}/>
+        <PrivateRoute exact path='/myaccount' component={MyAccountPage}/>
       </Switch>
     </Router>
   );
