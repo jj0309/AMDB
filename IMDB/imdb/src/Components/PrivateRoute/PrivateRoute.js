@@ -8,11 +8,14 @@ const PrivateRoute=({component:Component, ...rest})=>{
     let [IsReady,setIsReady] = useState(false);
 
     useEffect(()=>{
-        const verifyAuth=async()=>{
-            setIsAuth(await Auth.isAuthenticated())
-            setIsReady(true);
-        };
-        verifyAuth();
+        let mounted = true;
+        Auth.isAuthenticated().then(response=>{
+            if(mounted){
+                setIsAuth(response);
+                setIsReady(true);
+            }
+        })
+        return ()=>{mounted = false;};
     },[isAuth,IsReady]);
 
     return(
