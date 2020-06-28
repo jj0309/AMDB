@@ -19,17 +19,14 @@ app.get('/api/login/guest',(req,res)=>{
         permission:'guest'
     }
     const token = createToken(guestUserPayload,1800);
-    //const refreshToken = createRefreshToken(guestUserPayload);
     res.send({token:token});
 })
+
 const createToken=(user,tokenTime)=>{
     const token = jwt.sign(user,JWT_SECRET,{expiresIn:tokenTime});
     return token;
 }
-/* const createRefreshToken=(user)=>{
-    const refreshToken = jwt.sign(user,JWT_REFRESH_SECRET);
-    return refreshToken;
-} */
+
 
 app.post('/api/verifyToken',(req,res)=>{
     const token = req.body.token;
@@ -74,8 +71,12 @@ app.get('/api/discover/:genreID/:page',async(req,res)=>{
     res.send(returnedData);
 })
 
+app.post('/api/getfavorites',(req,res)=>{
+    res.send([3,3,3,3,3,3]);
+})
+
 app.get('/*',(req,res)=>{
-    res.send({invalidReq:true});
+    res.send(res.status(404));
 })
 
 app.listen(port,()=>{
