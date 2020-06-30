@@ -1,8 +1,10 @@
 .MyFavorites{
-    grid-row: 1/21;
+    grid-row: 2/6;
     grid-column: 6/21;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 .MyFavoritesCard{
     list-style: none;

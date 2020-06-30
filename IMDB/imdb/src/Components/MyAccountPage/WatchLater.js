@@ -1,13 +1,26 @@
-import React from 'react';
+import React,{ useEffect, useState } from 'react';
+import MovieCard from './MovieCard';
 import style from './css/WatchLater.module.css';
+import axios from 'axios';
 
-const WatchLater=()=>{
-    const guestList=[1,2,3,4,5];
+const WatchLater=(props)=>{
+    const user = props.user;
+    const [watchLaterList,setWatchLaterList] = useState([2,2,2]);
+    useEffect(()=>{
+        axios.post('/api/getwatchlater',
+            {
+                user:user.username
+            }
+        ).then((resp)=>{
+            setWatchLaterList(resp.data);
+        });
+    },[user]);
+
     return(
         <div className={style.WatchLater}>
             {
-                guestList.map((item,index)=>{
-                    return <a className={style.WatchLaterCard} href='/' key={index}><li>{item}</li></a>
+                watchLaterList.map((item,index)=>{
+                    return <MovieCard key={index} movie={item.datas}/>
                 })
             }
         </div>

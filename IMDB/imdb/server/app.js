@@ -71,8 +71,36 @@ app.get('/api/discover/:genreID/:page',async(req,res)=>{
     res.send(returnedData);
 })
 
-app.post('/api/getfavorites',(req,res)=>{
-    res.send([3,3,3,3,3,3]);
+app.post('/api/getfavorites',async(req,res)=>{
+    const user = req.body.user;
+    guestFavList = [299536,157336,27205,429617,299534,420818,330457];
+    let movieID = 0;
+    let returnedLs = [];
+    if(user === 'guest'){
+        await Promise.all(guestFavList.map(async(movie)=>{
+            movieID = movie;
+            let fetchURL = 'https://api.themoviedb.org/3/movie/'+movieID+'?api_key='+TmdbApiKey+'&language=en-US';
+            const fetchedData = await getApi.fetchAPI(fetchURL);
+            returnedLs.push(fetchedData);
+        }));
+    }
+    res.send(returnedLs);
+})
+
+app.post('/api/getwatchlater',async(req,res)=>{
+    const user = req.body.user;
+    guestWatchLaterList = [8392,129,4935,81,128,10515,16859];
+    let movieID = 0;
+    let returnedLs = [];
+    if(user === 'guest'){
+        await Promise.all(guestWatchLaterList.map(async(movie)=>{
+            movieID = movie;
+            let fetchURL = 'https://api.themoviedb.org/3/movie/'+movieID+'?api_key='+TmdbApiKey+'&language=en-US';
+            const fetchedData = await getApi.fetchAPI(fetchURL);
+            returnedLs.push(fetchedData);
+        }));
+    }
+    res.send(returnedLs);
 })
 
 app.get('/*',(req,res)=>{

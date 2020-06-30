@@ -1,0 +1,33 @@
+.MovieCard{
+    display: flex;
+    flex-direction: column;
+    transition: transform .2s;
+}
+.MovieCard img{
+    width: 200px;
+    height: auto;
+}
+.MovieCard h3{
+    text-align: center;
+    font-size: 1em;
+}
+.MovieCard a{
+    text-decoration: none;
+    color: white;
+}
+.MovieCard:hover{
+    transform: scale(1.03);
+}
+.MovieRating{
+    position: relative;
+    top: 4em;
+    left: 0;
+    width: fit-content;
+    border: 2px solid rgba(35, 35, 35, 0.7);
+    background-color: rgba(35, 35, 35, 0.7);
+    text-align: left;
+}
+.Star{
+    color: red;
+    font-weight: bold;
+}

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import MovieCard from './MovieCard';
 import style from './css/MyFavorites.module.css';
 import axios from 'axios';
 
@@ -19,7 +20,7 @@ const MyFavorites=(props)=>{
         <div className={style.MyFavorites}>
             {
                 favoriteList.map((item,index)=>{
-                    return <a className={style.MyFavoritesCard} href='/' key={index}><li>{item}</li></a>
+                    return <MovieCard key={index} movie={item.datas}/>
                 })
             }
         </div>
