@@ -19,7 +19,7 @@ const WatchLater=(props)=>{
     return(
         <div className={style.WatchLater}>
             {
-                watchLaterList.map((item,index)=>{
+                watchLaterList.slice(0,5).map((item,index)=>{
                     return <MovieCard key={index} movie={item.datas}/>
                 })
             }
