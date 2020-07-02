@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import style from './css/NavigationButton.module.css';
 
 const NavigationButton=(props)=>{
 
@@ -10,7 +11,7 @@ const NavigationButton=(props)=>{
     }
 
     return(
-        <div>
+        <div className={style.SlideControl}>
             {props.direction==='previous'?
                 <div onClick={Navigate}>&#10094;</div>
                 :
