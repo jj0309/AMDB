@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import MovieCard from './MovieCard';
 import NavigationButton from './NavigationButton';
-import style from './css/MyFavorites.module.css';
+import style from './css/Listing.module.css';
 import axios from 'axios';
 
-const MyFavorites=(props)=>{
+const Listing=(props)=>{
     const user = props.user;
     const numberOfCards = 5;
-    const [favoriteList,setFavoriteList] = useState([]);
+    const [MovieList,setMovieList] = useState([]);
     const [slideIndex,setSlideIndex] = useState(0);
+    const apiLink = props.api;
 
     const navigateSlideIndex=(direction)=>{
         if(direction === 0)
@@ -19,40 +20,46 @@ const MyFavorites=(props)=>{
     const showMovieCards=()=>{
         let cards=[];
         for(let index = slideIndex;index<slideIndex+numberOfCards;index++){
-            if(favoriteList[index] !== undefined){
-                cards.push(<MovieCard key={index} movie={favoriteList[index].datas}/>)
+            if(MovieList[index] !== undefined){
+                cards.push(<MovieCard key={index} movie={MovieList[index].datas}/>)
             }
         }
         return cards;
     }
 
     useEffect(()=>{
-        axios.post('/api/getfavorites',
+        axios.post(apiLink,
             {
                 user:user.username
             }
         ).then((resp)=>{
-            setFavoriteList(resp.data);
+            setMovieList(resp.data);
         });
-    },[user]);
+    },[user,apiLink]);
 
     useEffect(()=>{},[slideIndex])
 
     return(
-        <div className={style.MyFavorites}>
+        <div className={style.CardListContainer}>
+            <div className={style.Title}>{props.title}</div>
             {slideIndex>=1?
                 <NavigationButton direction='previous' navigationFunc={navigateSlideIndex}/>
                 :
-                null
+                <div></div>
             }
             {showMovieCards()}
-            {slideIndex<favoriteList.length?
+            {slideIndex+numberOfCards<MovieList.length?
                 <NavigationButton direction='next' navigationFunc={navigateSlideIndex}/>
                 :
-                null
+                <div></div>
             }
+            <div className={style.ListControl}>
+                Modify list
+                <br/>
+                <span className={style.SmallPrint}>disabled for guests</span>
+            </div>
         </div>
     )
 }
 
-export default MyFavorites;
+export default Listing;

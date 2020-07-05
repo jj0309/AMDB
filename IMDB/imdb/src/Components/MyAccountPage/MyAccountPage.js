@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import MyFavorites from './MyFavorites';
-import WatchLater from './WatchLater';
+import Listing from './Listing';
 import style from './css/MyAccountPage.module.css';
 const tokenAuth = require('../../Auth/ValidateToken');
 
@@ -15,8 +14,8 @@ const MyAccountPage=()=>{
     },[])
     return(
         <div className={style.AccountPageContainer}>
-            <MyFavorites user={user}/>
-            <WatchLater user={user}/>
+            <div className={style.MyFavoritesContainer}><Listing title='My Favorites' user={user} api='/api/getfavorites'/></div>
+            <div className={style.WatchLaterContainer}><Listing title='Watch Later' user={user} api='/api/getwatchlater'/></div>
         </div>
     )
 }

@@ -5,3 +5,11 @@
     height: 100vh;
     padding-right: 1em;
 }
+.MyFavoritesContainer{
+    grid-row: 2/10;
+    grid-column: 6/21;
+}
+.WatchLaterContainer{
+    grid-row: 11/19;
+    grid-column: 6/21;
+}

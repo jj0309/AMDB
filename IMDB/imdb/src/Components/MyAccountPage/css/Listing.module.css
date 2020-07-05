@@ -1,0 +1,24 @@
+.CardListContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.Title{
+    position: absolute;
+    left: 50%;
+    color: white;
+    font-size: 2em;
+    text-align: center;
+}
+.ListControl{
+    position: relative;
+    right: 5em;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+.SmallPrint{
+    font-size: 0.8em;
+    color: tomato;
+}
