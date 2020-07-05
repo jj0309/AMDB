@@ -4,6 +4,12 @@
     grid-template-rows: repeat(20,1fr);
     height: 100vh;
     padding-right: 1em;
+    background-color: #1c1a32;
+}
+.UserPannelContainer{
+    grid-row: 1/21;
+    grid-column: 1/5;
+    background-color: rgba(35, 35, 35, 0.8);;
 }
 .MyFavoritesContainer{
     grid-row: 2/10;
