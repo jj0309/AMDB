@@ -1,6 +1,6 @@
 .UserPannel{
     height: 50%;
-    padding-left: 3em;
+    width: 100%;
 }
 .UserPannel ul{
     display: flex;
@@ -14,8 +14,35 @@
 .UserPannel ul li{
     cursor: pointer;
 }
+.UserPannel ul span:hover{
+    color: tomato;
+}
 .GuestMessage{
     padding-top: 2em;
     color: tomato;
     text-align: center;
+}
+
+@media only screen and (min-width:320px){
+    .UserPannel{
+        padding-left: 0;
+    }
+    .UserPannel ul{
+        flex-direction: row;
+        font-size: 0.6em;
+        margin-top: 2em;
+    }
+    .UserPannel ul li{
+        text-decoration: underline;
+    }
+}
+@media only screen and (min-width:1024px){
+    .UserPannel ul{
+        flex-direction: column;
+        font-size: 1.5em;
+        margin-top: 2em;
+    }
+    .UserPannel ul li{
+        text-decoration: none;
+    }
 }

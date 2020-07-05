@@ -22,7 +22,7 @@ function App() {
         <Route path='/discover/:genre' exact component={()=><DiscoverPage genre={true}/>}/>
         <Route path='/discover/:genre/:page' component={()=><DiscoverPage genre={true}/>}/>
         <Route path ='/Login' component={LoginPage}/>
-        <PrivateRoute exact path='/about' component={AboutPage}/>
+        <Route exact path='/about' component={AboutPage}/>
         <PrivateRoute exact path='/myaccount' component={MyAccountPage}/>
       </Switch>
     </Router>

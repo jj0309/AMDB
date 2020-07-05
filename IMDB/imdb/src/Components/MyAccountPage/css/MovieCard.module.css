@@ -3,9 +3,10 @@
     flex-direction: column;
     margin-top: 2em;
     transition: transform .2s;
+    width: 12vw;
 }
 .MovieCard img{
-    width: 200px;
+    width: 12vw;
     height: auto;
 }
 .MovieCard h3{
@@ -31,4 +32,15 @@
 .Star{
     color: red;
     font-weight: bold;
+}
+@media only screen and (min-width:320px){
+    .MovieCard h3{
+        font-size: 0.8em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .MovieRating{
+        display: none;
+    }
 }

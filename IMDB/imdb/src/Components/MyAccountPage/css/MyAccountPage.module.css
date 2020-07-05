@@ -9,7 +9,7 @@
 .UserPannelContainer{
     grid-row: 1/21;
     grid-column: 1/5;
-    background-color: rgba(35, 35, 35, 0.8);;
+    background-color: rgba(35, 35, 35, 0.8);
 }
 .MyFavoritesContainer{
     grid-row: 2/10;
@@ -18,4 +18,49 @@
 .WatchLaterContainer{
     grid-row: 11/19;
     grid-column: 6/21;
+}
+@media only screen and (min-width:320px){
+    .AccountPageContainer{
+        padding-right: 0;
+    }
+    .UserPannelContainer{
+        grid-row: 1/5;
+        grid-column: 1/21;
+    }
+    .MyFavoritesContainer{
+        grid-row: 7/14;
+        grid-column: 1/21;
+    }
+    .WatchLaterContainer{
+        grid-row: 15/21;
+        grid-column: 1/21;
+    }
+}
+@media only screen and (min-width:768px){
+    .UserPannelContainer{
+        grid-row: 1/3;
+    }
+    .MyFavoritesContainer{
+        grid-row: 4/11;
+    }
+    .WatchLaterContainer{
+        grid-row: 12/17;
+    }
+}
+@media only screen and (min-width:1024px){
+    .AccountPageContainer{
+        padding-right: 1em;
+    }
+    .UserPannelContainer{
+        grid-row: 1/21;
+        grid-column: 1/5;
+    }
+    .MyFavoritesContainer{
+        grid-row: 2/10;
+        grid-column: 6/21;
+    }
+    .WatchLaterContainer{
+        grid-row: 11/19;
+        grid-column: 6/21;
+    }
 }

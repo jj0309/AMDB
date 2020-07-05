@@ -9,10 +9,10 @@ const UserPannel=(props)=>{
                 (null)
             }
             <ul>
-                <li>Add a new list</li>
-                <li>Modify account informations</li>
-                <li>My reviews</li>
-                <li>Shut down my account</li>
+                <li><span>Add a new list</span></li>
+                <li><span>Modify account informations</span></li>
+                <li><span>My reviews</span></li>
+                <li><span>Shut down my account</span></li>
             </ul>
         </div>
     )
