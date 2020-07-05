@@ -26,9 +26,37 @@
 
 @media only screen and (min-width:320px){
     .LoginModuleContainer{
-        padding: 0;
-        width: 100%;
-        height: 100%;
         grid-column: 4/18;
+    }
+}
+@media only screen and (min-width:360px){
+    .LoginModuleContainer{
+        grid-column: 3/19;
+    }
+}
+@media only screen and (min-width:768px){
+    .LoginModuleContainer h2{
+        font-size: 3em;
+    }
+    .LoginModuleContainer p{
+        font-size: 2em;
+    }
+    .LoginModuleContainer button{
+        font-size: 2em;
+    }
+}
+@media only screen and (min-width:1025px){
+    .LoginModuleContainer{
+        grid-row: 4/10;
+        grid-column: 8/14;
+    }
+    .LoginModuleContainer h2{
+        font-size: 2.5em;
+    }
+    .LoginModuleContainer p{
+        font-size: 1.5em;
+    }
+    .LoginModuleContainer button{
+        font-size: 1.5em;
     }
 }

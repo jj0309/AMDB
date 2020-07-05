@@ -1,5 +1,5 @@
 .UserLoginContainer{
-    grid-row: 12/16;
+    grid-row: 12/17;
     grid-column: 8/14;
     border: 1px solid whitesmoke;
     border-radius: 5px;
@@ -58,6 +58,9 @@
     .FormContainer input{
         font-size: 1em;
     }
+    .FormContainer button{
+        font-size: 2em;
+    }
 }
 @media only screen and (min-width:1024px){
     .UserLoginContainer{
@@ -67,9 +70,9 @@
         font-size: 1.1em;
     }
 }
-@media only screen and (min-width:1080px){
+@media only screen and (min-width:1025px){
     .UserLoginContainer{
-        grid-row: 12/16;
+        grid-row: 12/17;
         grid-column: 8/14;
         font-size: 1em;
     }
