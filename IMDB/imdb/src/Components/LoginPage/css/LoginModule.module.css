@@ -34,3 +34,43 @@
 .FormContainer p{
     color: red;
 }
+
+@media only screen and (min-width:320px){
+    .UserLoginContainer{
+        grid-column: 3/19;
+        grid-row: 12/19;
+    }
+}
+@media only screen and (min-width:360px){
+    .UserLoginContainer{
+        grid-row: 12/18;
+    }
+}
+@media only screen and (min-width:411px){
+    .UserLoginContainer{
+        grid-row: 12/18;
+    }
+}
+@media only screen and (min-width:768px){
+    .UserLoginContainer{
+        font-size: 1.2em;
+    }
+    .FormContainer input{
+        font-size: 1em;
+    }
+}
+@media only screen and (min-width:1024px){
+    .UserLoginContainer{
+        font-size: 1.5em;
+    }
+    .FormContainer input{
+        font-size: 1.1em;
+    }
+}
+@media only screen and (min-width:1080px){
+    .UserLoginContainer{
+        grid-row: 12/16;
+        grid-column: 8/14;
+        font-size: 1em;
+    }
+}
